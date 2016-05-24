@@ -3,8 +3,6 @@ apache:
   build: ./apache
   ports:
     - "80:80"
-  links:
-    - mysql
   volumes:
     - ./app/src:/var/www/html
 #### MySQL Container #########################################
