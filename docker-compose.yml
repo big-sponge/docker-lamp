@@ -1,21 +1,23 @@
-### MySQL Container #########################################
-    mysql:
-      image: mysql:latest
-      ports:
-        # Allow client to access 3306
-        - "3306:3306"
-      volumes:
-        # NOTE: your data will be stored in ./mysql
-        - ./mysql:/var/lib/mysql
-      environment:
-        - MYSQL_ROOT_PASSWORD=your_mysql_password
-
-### MySQL Container #########################################
-    apache:
-        build: ./apache
-        ports:
-            - "80:80"
-        links:
-            - mysql
-          volumes:
-        - ./app/src:/var/www/html
+### apache Container #########################################
+apache:
+  build: ./apache
+  ports:
+    - "80:80"
+  links:
+    - mysql
+  volumes:
+    - ./app/src:/var/www/html
+#### MySQL Container #########################################
+mysql:
+  image: mysql:latest
+  ports:
+    # Allow client to access 3306
+    - "3306:3306"
+  volumes:
+    # NOTE: your data will be stored in ./mysql
+    - ./mysql:/var/lib/mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=root
+   
+   
+ 
