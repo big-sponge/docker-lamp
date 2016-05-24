@@ -29,10 +29,7 @@ RUN apt-get install -y \
 	&& docker-php-ext-install pdo_mysql \
 	&& docker-php-ext-install zip \
 	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-	&& curl -sS https://getcomposer.org/installer | php \
-	&& mv composer.phar /usr/bin/composer \
-	&& pecl install xdebug \
-	&& a2enmod rewrite
+	 
 
 ADD conf/apache2.conf /etc/apache2/
 ADD conf/php.ini /usr/local/etc/php/
