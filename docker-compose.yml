@@ -4,7 +4,7 @@ apache:
   ports:
     - "80:80"
   volumes:
-    - ./app/src:/var/www/html
+    - ./app/src/Alpaca/Source/public:/var/www/html
 
 #### MySQL Container #########################################
 mysql:
