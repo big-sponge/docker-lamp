@@ -1,7 +1,7 @@
 FROM daocloud.io/php:5.6-apache
 COPY ./conf/php.ini /usr/local/etc/php
 
-ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
+ADD ./apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 
 
 RUN apt-get update && apt-get install -y \
