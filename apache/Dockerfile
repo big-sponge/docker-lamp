@@ -13,8 +13,9 @@ RUN apt-get update && apt-get install -y \
         libpng12-dev \
     && docker-php-ext-install iconv mcrypt \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install gd
+    && docker-php-ext-install gd \
     && docker-php-ext-install pdo_mysql
+
 
 RUN a2enmod rewrite
  
@@ -24,4 +25,4 @@ ENV APACHE_RUN_GROUP www-data
 ENV APACHE_LOG_DIR /var/log/apache2
 ENV APACHE_LOCK_DIR /var/lock/apache2
 ENV APACHE_PID_FILE /var/run/apache2.pid 
- 
+
