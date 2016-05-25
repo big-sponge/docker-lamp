@@ -2,6 +2,7 @@ FROM daocloud.io/php:5.6-apache
 COPY ./conf/php.ini /usr/local/etc/php
 
 ADD ./conf/apache-config.conf /etc/apache2/sites-enabled/000-default.conf
+ADD ./conf/apache2.conf /etc/apache2/
 
  
 
