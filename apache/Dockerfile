@@ -3,6 +3,8 @@ COPY ./conf/php.ini /usr/local/etc/php
 
 ADD ./conf/apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 
+ 
+RUN ln -s /app/src/Alpaca/Source/public /var/www/html
 
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
