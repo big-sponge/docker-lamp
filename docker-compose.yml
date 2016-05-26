@@ -8,7 +8,7 @@ apache:
 
 #### MySQL Container #########################################
 mysql:
-  image: mysql:latest
+  image: ./mysql
   ports:
     # Allow client to access 3306
     - "3306:3306"
